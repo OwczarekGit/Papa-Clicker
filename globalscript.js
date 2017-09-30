@@ -16,6 +16,9 @@ var cyganie = 0;
 var studenci = 0;
 var imigranci = 0;
 var papaje = 0;
+var przedszkolaki = 0;
+var gimbusy = 0;
+var licealisci = 0;
 
 function savegame() {
     if (typeof (Storage) !== "undefined") {
@@ -23,10 +26,14 @@ function savegame() {
         localStorage.pckrem = kremowkiPC;
         localStorage.pskrem = kremowkiPS;
         localStorage.maledzieciilosc = maledzieci;
+        localStorage.przedszkolakiilosc = przedszkolaki;
+        localStorage.gimbusyilosc = gimbusy;
+        localStorage.licealisciilosc = licealisci;
         localStorage.cyganieilosc = cyganie;
         localStorage.studenciilosc = studenci;
         localStorage.imigranciilosc = imigranci;
         localStorage.papajeilosc = papaje;
+        
         autosaving = true;
         
         document.getElementById("infobox").innerHTML = 'Game Saved Succesfully';
@@ -44,7 +51,7 @@ function krmClicked() {
 
 //Male dzieci +1
 function maledziecipc() {
-    var koszt = 10 * Math.pow(1.15, maledzieci);
+    var koszt = 50 * Math.pow(1.15, maledzieci);
     
     koszt = Math.ceil(koszt);
     
@@ -53,23 +60,67 @@ function maledziecipc() {
         kremowki -= koszt;
         document.getElementById("maledzieciPC").innerHTML = 'Małe Dzieci: ' + maledzieci;
         kremowkiPC = 1 + maledzieci;
-        document.getElementById("ilosc").innerHTML = 'Kremówki: ' + kremowki;
     } else {
         document.getElementById("infobox").innerHTML = 'Potrzebujesz: ' + koszt + ' kremówek';
         infobox();
     }
 }
 
+//Przedszkolaki +1
+function przedszkolakips() {
+    var koszt = 1000*Math.pow(1.15, przedszkolaki);
+    koszt = Math.ceil(koszt);
+    
+    if (kremowki >= koszt) {
+        przedszkolaki += 1;
+        kremowki -= koszt;
+        document.getElementById("przedszkolakips").innerHTML = 'Przedszkolaki: ' + przedszkolaki;
+    } else {
+        document.getElementById("infobox").innerHTML = 'Potrzebujesz: ' + koszt + ' kremówek';
+        infobox();
+    }
+}
+
+//gimbusy +1
+function gimbusyps() {
+    var koszt = 10000*Math.pow(1.15, gimbusy);
+    koszt = Math.ceil(koszt);
+    
+    if (kremowki >= koszt) {
+        gimbusy += 1;
+        kremowki -= koszt;
+        document.getElementById("gimbusyps").innerHTML = 'Gimbusy: ' + gimbusy;
+    } else {
+        document.getElementById("infobox").innerHTML = 'Potrzebujesz: ' + koszt + ' kremówek';
+        infobox();
+    }
+}
+
+//licealisci +1
+function licealiscips() {
+    var koszt = 100000*Math.pow(1.15, licealisci);
+    koszt = Math.ceil(koszt);
+    
+    if (kremowki >= koszt) {
+        licealisci += 1;
+        kremowki -= koszt;
+        document.getElementById("licealiscips").innerHTML = 'Licealiści: ' + licealisci;
+    } else {
+        document.getElementById("infobox").innerHTML = 'Potrzebujesz: ' + koszt + ' kremówek';
+        infobox();
+    }
+}
+
+
 //Cyganie +1
 function cyganieps() {
-    var koszt = 1000*Math.pow(1.15, cyganie);
+    var koszt = 1000000*Math.pow(1.15, cyganie);
     koszt = Math.ceil(koszt);
     
     if (kremowki >= koszt) {
         cyganie += 1;
         kremowki -= koszt;
         document.getElementById("cyganieps").innerHTML = 'Cyganie: ' + cyganie;
-        document.getElementById("ilosc").innerHTML = 'Kremówki: ' + kremowki;
     } else {
         document.getElementById("infobox").innerHTML = 'Potrzebujesz: ' + koszt + ' kremówek';
         infobox();
@@ -78,14 +129,13 @@ function cyganieps() {
 
 //Studenci +1
 function studencips() {
-    var koszt = 10000*Math.pow(1.15, studenci);
+    var koszt = 10000000*Math.pow(1.15, studenci);
     koszt = Math.ceil(koszt);
 
     if (kremowki >= koszt) {
         studenci += 1;
         kremowki -= koszt;
         document.getElementById("studencips").innerHTML = 'Studenci: ' + studenci;
-        document.getElementById("ilosc").innerHTML = 'Kremówki: ' + kremowki;
     } else {
         document.getElementById("infobox").innerHTML = 'Potrzebujesz: ' + koszt + ' kremówek';
         infobox();
@@ -94,14 +144,13 @@ function studencips() {
 
 //Imigranci +1
 function imigrancips() {
-    var koszt = 100000*Math.pow(1.15, imigranci);
+    var koszt = 100000000*Math.pow(1.15, imigranci);
     koszt = Math.ceil(koszt);
     
     if (kremowki >= koszt) {
         imigranci += 1;
         kremowki -= koszt;
         document.getElementById("imigrancips").innerHTML = 'Imigranci: ' + imigranci;
-        document.getElementById("ilosc").innerHTML = 'Kremówki: ' + kremowki;
     } else {
         document.getElementById("infobox").innerHTML = 'Potrzebujesz: ' + koszt + ' kremówek';
         infobox();
@@ -110,20 +159,18 @@ function imigrancips() {
 
 //Papaje +1
 function papajeps() {
-    var koszt = 10000000*Math.pow(1.15, papaje);
+    var koszt = 10000000000*Math.pow(1.15, papaje);
     koszt = Math.ceil(koszt);
     
     if (kremowki >= koszt) {
         papaje += 1;
         kremowki -= koszt;
         document.getElementById("papajeps").innerHTML = 'Papaje: ' + papaje;
-        document.getElementById("ilosc").innerHTML = 'Kremówki: ' + kremowki;
     } else {
         document.getElementById("infobox").innerHTML = 'Potrzebujesz: ' + koszt + ' kremówek';
         infobox();
     }
 }
-
 
 //Click animation
 async function clickAnim() {
@@ -147,7 +194,7 @@ setInterval(drawpersec, 100);
 
 //Count kremowki
 function countall() {
-    kremowkiPS = (cyganie * 5) + (studenci * 100) + (imigranci * 1000) + (papaje * 10000);
+    kremowkiPS = (przedszkolaki * 5) + (gimbusy * 20) + (licealisci * 50) + (cyganie * 100) + (studenci * 500) + (imigranci * 1500) + (papaje * 10000);
 }
 setInterval(countall, 100);
 
@@ -178,6 +225,9 @@ setInterval(playtime, 1000);
 
 function refreshall() {
     document.getElementById("maledzieciPC").innerHTML = 'Małe Dzieci: ' + maledzieci;
+    document.getElementById("przedszkolakips").innerHTML = 'Przedszkolaki: ' + przedszkolaki;
+    document.getElementById("gimbusyps").innerHTML = 'Gimbusy: ' +gimbusy;
+    document.getElementById("studencips").innerHTML = 'Studenci: ' + studenci;
     document.getElementById("cyganieps").innerHTML = 'Cyganie: ' + cyganie;
     document.getElementById("studencips").innerHTML = 'Studenci: ' + studenci;
     document.getElementById("imigrancips").innerHTML = 'Imigranci: ' + imigranci;
@@ -190,6 +240,9 @@ function loadgame() {
         kremowkiPC = parseInt(localStorage.pckrem);
         kremowkiPS = parseInt(localStorage.pskrem);
         maledzieci = parseInt(localStorage.maledzieciilosc);
+        przedszkolaki = parseInt(localStorage.przedszkolakiilosc);
+        gimbusy = parseInt(localStorage.gimbusyilosc);
+        licealisci = parseInt(localStorage.licealisciilosc);
         cyganie = parseInt(localStorage.cyganieilosc);
         studenci = parseInt(localStorage.studenciilosc);
         imigranci = parseInt(localStorage.imigranciilosc);

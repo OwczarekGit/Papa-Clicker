@@ -180,6 +180,10 @@ div.upgradeelement:hover{
 	font-size: 0.4em;
 }
 
+#menu-item1{
+    overflow-y: scroll;
+}
+
 #menu-item2{
     font-size: 3em;
     padding: 3em;
