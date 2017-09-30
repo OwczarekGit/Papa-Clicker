@@ -1,0 +1,323 @@
+html{
+    
+}
+
+body{
+    height: 100vh; /* 100% */
+    width: 100%;
+    padding: 0;
+	margin: 0;
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.8), 
+      rgba(0, 0, 0, 0.8)
+    ), url("https://upload.wikimedia.org/wikipedia/commons/b/b2/Bazylika_Ofiarowania_Naj%C5%9Bwi%C4%99tszej_Maryi_Panny_w_Wadowicach..JPG");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.game{
+    height: 80vh;
+    width: 40%;
+    padding: 0;
+	margin: 5% 2.5% 5% 7.5%;
+    float: left;
+    box-sizing: border-box;
+    
+}
+
+.game:hover{
+    cursor: pointer;
+}
+
+.interface{
+    height: 80vh;
+    width: 40%;
+    padding: 0;
+	margin: 5% 7.5% 5% 2.5%;
+    float: left;
+    box-sizing: border-box;
+	
+}
+
+
+.menu{
+    width: 100%;
+    padding: 0;
+	margin: 0;
+    float: top;
+}
+
+.menu ul{
+    width: 100%;
+    height: 4.8vh;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    list-style-type: none;
+    font-size: 3vh;
+    text-align: center;
+}
+
+.menu li{
+    width: 25%;
+    height: 4.8vh;
+    margin: 0;
+    padding: 0;
+    float:left;
+    display: block;
+    color: white;
+    text-align: center;
+}
+
+.menu li:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.menu-item{
+	padding: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+	float: left;
+	color: white;
+	overflow: hidden;
+	box-sizing: border-box;
+	background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("http://seminarium.legnica.pl/public/uploaded/modlitwa%20o%20powolania/JPII.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.display-item{
+    display: block;
+	height: 100%;
+	width: 100%;
+}
+
+div#counter{
+    border-radius: .5em;
+	color: white;
+	padding:0;
+	margin:0;
+	width: 100%;
+	height: 13%;
+	text-align: center;
+	font-size: 3em;
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 0px 50px 10px white;
+    animation-name: bouncy-beat;
+    animation-duration: 0.45s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes bouncy-beat{
+    from{}
+    to{transform: scale(1.1,1.1);}
+}
+
+div#click{
+	
+	height: 91%;
+	width: 100%;
+}
+
+div.upgradeelement{
+	box-sizing: border-box;
+	border-bottom: 2px solid black;
+	font-size: 3em;
+	padding: 5%;
+	width: 100%;
+	height: auto;
+}
+
+div.upgradeelement:hover{
+	cursor: pointer;
+	color: grey;
+}
+
+#aboutush{
+	text-align: center;
+	font-size: 3em;
+}
+
+#aboutusp{
+	font-size: 3em;
+	padding: 1em;
+	font-size: 2em;
+	text-align: center;
+}
+
+.clicked-anim{
+	overflow: hidden;
+	transform: scale(1.04,1.04);
+	animation-duration: 0.2s;
+	animation-iteration-count: 1;
+	animation-delay: 0.1s;
+	transition: ease-in-out;
+}
+
+.clicked-animbtn{
+	overflow: hidden;
+	transform: scale(0.95,0.95);
+	animation-duration: 0.2s;
+	animation-iteration-count: 1;
+	animation-delay: 0.1s;
+	transition: ease-in-out;
+}
+
+#displayps{
+	font-size: 0.4em;
+}
+
+#menu-item2{
+    font-size: 3em;
+    padding: 3em;
+    text-align: center;
+}
+
+#menu-item3{
+    text-align: center;
+}
+audio{
+    margin: 1em 0;
+}
+
+iframe{
+    opacity: 0.9;
+    border: 0.1em solid silver;
+    box-sizing: border-box;
+}
+
+#savegame{
+    background-color: #5d5d5d;
+    text-shadow: 0px 0px 6px black;
+    border-radius: 15px;
+    font-size: 3em;
+    cursor: pointer;
+    text-align: center;
+    width: 30%;
+    margin: .2em auto;
+    box-shadow: 10px 10px 10px 0px black;
+    display: inline-block;
+}
+
+#savegame:hover{
+    background-color: #7e7e7e;
+}
+
+#loadgame{
+    background-color: #5d5d5d;
+    text-shadow: 0px 0px 6px black;
+    border-radius: 15px;
+    font-size: 3em;
+    cursor: pointer;
+    text-align: center;
+    width: 30%;
+    margin: .2em auto;
+    box-shadow: 10px 10px 10px 0px black;
+    display: inline-block;
+}
+
+#loadgame:hover{
+    background-color: #7e7e7e;
+}
+
+#infobox{
+    text-align: center;
+    padding: .7em;
+    position: absolute;
+    background-color: black;
+    color: red;
+    border: .1em solid silver;
+    width: auto;
+    top: 2%;
+    left: 62%;
+    display: none;
+    font-size: 1.2em;
+}
+
+.infoboxblink{
+    display: block !important;
+}
+
+.audio-player-frame p{
+    margin: 0;
+    padding: 0;
+}
+
+.audio-player-frame{
+    background-color: white;
+    width: 70%;
+    height: auto;
+    color: black;
+    display: inline-block;
+    margin: 1em;
+    box-sizing: border-box;
+    border: .1em solid black;
+}
+
+.now-playing{
+    font-size: 1.3em;
+    border-bottom: .1em;
+    padding: .4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: .2em;
+    letter-spacing: -.em;
+}
+
+.playerbutton{
+    box-sizing: border-box;
+    width: 30%;
+    display: inline-block;
+    font-size: 1.7em;
+    background-color: #818181;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    padding: .4em;
+    margin-bottom: 0.15em;
+    cursor: pointer;
+    border: .1em solid black;
+}
+
+.playerbutton:hover{
+    color:#d1d1d1;
+    background-color: #696969;
+}
+
+.mute-btn{
+    background-color: #d35656;
+}
+
+.mute-btn:hover{
+    background-color: #963939;
+}
+
+.volup-btn{
+    background-color: #d42e2e;
+}
+
+.volup-btn:hover{
+    background-color: #961919;
+}
+
+.voldwn-btn{
+    background-color: #54af44;
+}
+
+.voldwn-btn:hover{
+    background-color: #319021;
+}

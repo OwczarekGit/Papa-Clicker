@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Papa Clicker</title>
+    <link rel="shortcut icon" href="http://www.zielonyklos.pl/art/PUTKA_W361.png">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="menu-display.js"></script>
+    <script src="globalscript.js"></script>
+</head>
+
+<body>
+    <main>
+        <div id="infobox">INFOBOX</div>
+        <div class="game">
+            <div id="counter">
+                <div id="ilosc">Kremówki: 0</div>
+                <div id="displayps">Kremówek na sek: 0</div>
+            </div>
+            <div onclick="krmClicked()" id="click" class=""><img height="100%;" width="100%;" src="http://www.zielonyklos.pl/art/PUTKA_W361.png" alt="" id="clickme"></div>
+        </div>
+
+        <div class="interface">
+            <div class="menu">
+                <ul>
+                    <li onclick="displayUpgrades()">Upgrades</li>
+                    <li onclick="displayStats()">Stats</li>
+                    <li onclick="displayOptions()">Options</li>
+                    <li onclick="displayAbout()">About</li>
+                </ul>
+            </div>
+            <div id="menu-item1" class="menu-item display-item">
+                <div onclick="maledziecipc()" id="maledzieciPC" class="upgradeelement">Małe Dzieci: 0</div>
+                <div onclick="cyganieps()" id="cyganieps" class="upgradeelement">Cyganie: 0</div>
+                <div onclick="studencips()" id="studencips" class="upgradeelement">Studenci: 0</div>
+                <div onclick="imigrancips()" id="imigrancips" class="upgradeelement">Imigranci: 0</div>
+                <div onclick="papajeps()" id="papajeps" class="upgradeelement">Papaje: 0</div>
+            </div>
+            <div id="menu-item2" class="menu-item">Null</div>
+            <div id="menu-item3" class="menu-item">
+
+                <div class="audio-player-frame">
+                    <div id="songTitle" class="now-playing">Artist - Song name</div>
+                    <div id="prevSong" onclick="previousSong();" class="prev-song playerbutton">
+                        <p>Prev</p>
+                    </div>
+                    <div id="playpause" onclick="playorpause();" class="playpause-btn playerbutton">
+                        <p>Pause</p>
+                    </div>
+                    <div id="nextSong" onclick="next();" class="next-song playerbutton">
+                        <p>Next</p>
+                    </div>
+                        <div id="muteUnmute" onclick="mutesong();" class="mute-btn playerbutton">Mute</div>
+                        <div id="volUp" onclick="volumeup();" class="volup-btn playerbutton">
+                            <p>+</p>
+                        </div>
+                        <div id="volDown" onclick="volumedown();" class="voldwn-btn playerbutton">
+                            <p>-</p>
+                        </div>
+                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ggs6pveXWtw" framborder="0" allowfullscreen></iframe>
+                <div onclick="savegame();" id="savegame">SAVE</div>
+                <div onclick="loadgame();" id="loadgame">LOAD</div>
+                <p style="font-size: 2em;">Po pierwszym Save, Autosave co 1min</p>
+            </div>
+            <div id="menu-item4" class="menu-item">
+                <h1 id="aboutush">Papa Clicker</h1>
+                <p id="aboutusp">Wersja <i>ALPHA 0.2</i><br/> JP2GMD&copy;2017</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
