@@ -227,6 +227,7 @@ function refreshall() {
     document.getElementById("maledzieciPC").innerHTML = 'Małe Dzieci: ' + maledzieci;
     document.getElementById("przedszkolakips").innerHTML = 'Przedszkolaki: ' + przedszkolaki;
     document.getElementById("gimbusyps").innerHTML = 'Gimbusy: ' +gimbusy;
+    document.getElementById("licealiscips").innerHTML = 'Licealiści: ' + licealisci;
     document.getElementById("studencips").innerHTML = 'Studenci: ' + studenci;
     document.getElementById("cyganieps").innerHTML = 'Cyganie: ' + cyganie;
     document.getElementById("studencips").innerHTML = 'Studenci: ' + studenci;
