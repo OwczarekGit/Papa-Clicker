@@ -325,3 +325,20 @@ iframe{
 .voldwn-btn:hover{
     background-color: #319021;
 }
+
+.git{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 30%;
+    overflow: hidden;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+}
+
+.git:hover{
+    transform: scale(1.1,1.1);
+}
